@@ -3,3 +3,10 @@
 Reproduces an issue that generates an error like this
 
 Found multiple publish output files with the same relative path: C:\Users\vsoft.nuget\packages\vssl.framework.storageservices\10.65.0\contentFiles\any\net10.0-windows10.0.26100\obj\Debug\net10.0-android\lp\71\jl\res\drawable-hdpi-v4\notification_bg_low_normal.9.png, C:\Users\vsoft.nuget\packages\vssl.framework.platformproperties\10.65.0\contentFiles\any\net10.0-windows10.0.26100\obj\Debug\net10.0-android\lp\71\jl\res\drawable-hdpi-v4\notification_bg_low_normal.9.png, C:\Users\vsoft.nuget\packages\vssl.framework.loggingservices\10.65.0\contentFiles\any\net10.0-windows10.0.26100\obj\Debug\net10.0-android\lp\71\jl\res\drawable-hdpi-v4\notification_bg_low_normal.9.png, C:\Users\vsoft.nuget\packages\vssl.framework.storageservices\10.65.0\contentFiles\any\net10.0-windows10.0.26100\obj\Debug\net10.0-android\lp\71\jl\res\drawable-hdpi-v4\notification_bg_low_pressed.9.png, C:\Users\vsoft.nuget\packages\vssl.framework.platformproperties\10.65.0\contentFiles\any\net10.0-windows10.0.26100\obj\Debug\net10.0-android\lp\71\jl\res\drawable-hdpi-v4\notification_bg_low_pressed.9.png, C:\Users\vsoft.nuget\packages\vssl.framework.loggingservices\10.65.0\contentFiles\any\net10.0-windows10.0.26100\obj\Debug\net10.0-android\lp\71\jl\res\drawable-hdpi-v4\notification_bg_low_pressed.9.png, C:\Users\vsoft.nuget\packages\vssl.framework.storageservices\10.65.0\contentFiles\any\net10.0-windows10.0.26100\obj\Debug\net10.0-android\lp\71\jl\res\drawable-hdpi-v4\notification_bg_normal.9.png, C:\Users\vsoft.nuget\packages\vssl.framework.platformproperties\10.65.0\contentFiles\any\net10.0-
+
+NOTE
+
+To reproduce this you will need to modify this line in the two nuget libraries
+        <Exec Command="%(Drive.RootDir)Nuget\nuget push bin\$(Configuration)\$(PackageId).$(PackageVersion).nupkg -Source VSSL.local" />
+
+        And define the location of the nuget exe and the package source being pushed to
