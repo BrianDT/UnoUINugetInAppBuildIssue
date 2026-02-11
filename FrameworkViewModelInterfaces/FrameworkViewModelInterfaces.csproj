@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <CodeAnalysisRuleSet>..\Vssl.ruleset</CodeAnalysisRuleSet>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <PackageId>Vssl.Framework.ViewModelInterfacesSample</PackageId>
+      <Authors>BDT</Authors>
+      <Company>Visual Software Systems Ltd.</Company>
+      <Product>Visual Framework</Product>
+      <Description>Cross Platform Visual Framework</Description>
+      <Version>10.0.1</Version>
+      <Copyright>Visual Software Systems Ltd. Copyright (c) 2013 - 2026 All rights reserved</Copyright>
+      <PackageReadmeFile>readme.md</PackageReadmeFile>
+
+  </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="readme.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Drive Include="$(MSBuildProjectFullPath)" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="StyleCop.Analyzers">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <Target Condition="'$(Configuration)' == 'Release'" Name="CopyPackage" AfterTargets="Pack">
+        <Exec Command="%(Drive.RootDir)Nuget\nuget push bin\$(Configuration)\$(PackageId).$(PackageVersion).nupkg -Source VSSL.local" />
+    </Target>
+
+</Project>

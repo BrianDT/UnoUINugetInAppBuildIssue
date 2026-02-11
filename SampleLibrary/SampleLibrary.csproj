@@ -1,0 +1,72 @@
+﻿<Project Sdk="Uno.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0-ios;net10.0-android;net10.0-windows10.0.26100;net10.0-browserwasm</TargetFrameworks>
+    <UnoSingleProject>true</UnoSingleProject>
+    <OutputType>Library</OutputType>
+    <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <AssemblyName>Vssl.Framework.SampleLibary</AssemblyName>
+      <RootNamespace>Vssl.VisualFramework.SampleLibary</RootNamespace>
+
+      <IsPackable>true</IsPackable>
+      <PackageId>VSSL.Framework.SampleLibary</PackageId>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+      <Authors>BDT</Authors>
+      <Company>Visual Software Systems Ltd.</Company>
+      <Product>VSSL Cross platform Framework</Product>
+      <Description>Visual Framework</Description>
+      <Version>10.65.0</Version>
+      <Copyright>Visual Software Systems Ltd 2012 - 2026.</Copyright>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+      <CodeAnalysisRuleSet>..\Vssl.ruleset</CodeAnalysisRuleSet>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+      <!--
+      UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
+      https://aka.platform.uno/singleproject-features
+    -->
+    
+    <UnoFeatures>
+      SkiaRenderer;
+    </UnoFeatures>
+  </PropertyGroup>
+
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+    <!--
+    If you encounter this error message:
+
+      error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
+      Please update to a newer .NET SDK in order to reference this assembly.
+
+    This means that the two packages below must be aligned with the "build" version number of
+    the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
+    must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
+    -->
+    <!-- <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.22621.28" />
+    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.22621.28" /> -->
+      <PackageReference Include="StyleCop.Analyzers">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Vssl.Framework.ViewModelInterfacesSample" />
+  </ItemGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Drive Include="$(MSBuildProjectFullPath)"/>
+    </ItemGroup>
+
+    <Target Condition="'$(Configuration)' == 'Release'" Name="CopyPackage" AfterTargets="Pack">
+        <Exec Command="%(Drive.RootDir)Nuget\nuget push bin\$(Configuration)\$(PackageId).$(PackageVersion).nupkg -Source VSSL.local" />
+    </Target>
+
+</Project>

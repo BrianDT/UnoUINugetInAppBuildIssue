@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "UnoUINugetInAppBuildIssue",
+  "display": "standalone",
+  "name": "UnoUINugetInAppBuildIssue",
+  "short_name": "UnoUINugetInAppBuildIssue",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

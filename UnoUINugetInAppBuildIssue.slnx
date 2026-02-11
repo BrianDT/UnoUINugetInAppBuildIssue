@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/Nuget Library/">
+    <Project Path="FrameworkViewModelInterfaces/FrameworkViewModelInterfaces.csproj" Id="2ffdcc83-8436-4d89-bc58-bfdf79f4881e" />
+    <Project Path="SampleLibrary/SampleLibrary.csproj" Id="596f8325-01dc-496c-b7eb-965def50bf69" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="ReadMe.md" />
+  </Folder>
+  <Folder Name="/ViewModels/">
+    <Project Path="ViewModelInterfaces/ViewModelInterfaces.csproj" Id="aa836cda-3f0f-46c5-a0ea-65ae5f7b7ce4" />
+    <Project Path="ViewModels/ViewModels.csproj" Id="db5e65ad-7fbc-4391-9888-d170f6ce4459" />
+  </Folder>
+  <Project Path="UnoUINugetInAppBuildIssue/UnoUINugetInAppBuildIssue.csproj">
+    <Deploy />
+  </Project>
+</Solution>
