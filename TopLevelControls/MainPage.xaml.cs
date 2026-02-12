@@ -1,10 +1,9 @@
 // <copyright file="MainPage.xaml.cs" company="Visual Software Systems Ltd.">Copyright (c) 2026 All rights reserved</copyright>
-namespace UnoUINugetInAppBuildIssue;
+namespace Vssl.UnoUINugetInAppBuildIssue.TopLevelControls;
 
-using System.Net.NetworkInformation;
 using Microsoft.UI.Xaml.Controls;
-using ViewModelInterfaces;
-using ViewModels;
+using Vssl.Samples.Framework;
+using Vssl.UnoUINugetInAppBuildIssue.ViewModelInterfaces;
 
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
@@ -18,7 +17,7 @@ public sealed partial class MainPage : Page
     {
         this.InitializeComponent();
 
-        this.DataContext = new MainViewModel();
+        this.DataContext = DependencyHelper.Resolve<IMainViewModel>();
     }
 
     /// <summary>

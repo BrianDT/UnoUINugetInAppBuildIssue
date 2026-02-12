@@ -1,9 +1,9 @@
 // <copyright file="ReusableControl.xaml.cs" company="Visual Software Systems Ltd.">Copyright (c) 2014, 2026 All rights reserved</copyright>
 namespace Vssl.VisualFramework.SampleLibrary;
 
-using FrameworkViewModelInterfaces;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Vssl.Samples.FrameworkInterfaces;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 

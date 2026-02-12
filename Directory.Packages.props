@@ -8,8 +8,13 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="StyleCop.Analyzers" Version="1.1.118" />
-    <PackageVersion Include="VSSL.Framework.SampleLibary" Version="10.65.0" />
-    <PackageVersion Include="Vssl.Framework.ViewModelInterfacesSample" Version="10.0.1" />
+      <!--<PackageVersion Include="VSSL.Framework.SampleConverters" Version="9.64.1" />-->
+      <PackageVersion Include="VSSL.Framework.SampleConverters" Version="10.65.1" />
+      <!--<PackageVersion Include="VSSL.Framework.SampleLibary" Version="9.64.1" />-->
+      <PackageVersion Include="VSSL.Framework.SampleLibary" Version="10.65.2" />
+    <!--<PackageVersion Include="Vssl.Framework.SampleFrameworkInterfaces" Version="9.0.1" />-->
+      <PackageVersion Include="Vssl.Framework.SampleFrameworkInterfaces" Version="10.0.2" />
   </ItemGroup>
 </Project>

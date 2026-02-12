@@ -1,6 +1,6 @@
 // <copyright file="BooleanToVisibilityConverter.cs" company="Visual Software Systems Ltd.">Copyright (c) 2012 All rights reserved</copyright>
 
-namespace Vssl.VisualFramework.SampleLibrary;
+namespace Vssl.VisualFramework.SampleConverters;
 
 using System;
 

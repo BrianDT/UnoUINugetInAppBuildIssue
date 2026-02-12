@@ -1,7 +1,7 @@
 // <copyright file="IMainViewModel.cs" company="Visual Software Systems Ltd.">Copyright (c) 2026 All rights reserved</copyright>
-namespace ViewModelInterfaces;
+namespace Vssl.UnoUINugetInAppBuildIssue.ViewModelInterfaces;
 
-using FrameworkViewModelInterfaces;
+using Vssl.Samples.FrameworkInterfaces;
 
 /// <summary>
 /// The interface to the main view model

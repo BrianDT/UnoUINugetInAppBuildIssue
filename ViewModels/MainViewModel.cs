@@ -1,10 +1,10 @@
 // <copyright file="MainViewModel.cs" company="Visual Software Systems Ltd.">Copyright (c) 2026 All rights reserved</copyright>
-namespace ViewModels;
+namespace Vssl.UnoUINugetInAppBuildIssue.ViewModels;
 
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using ViewModelInterfaces;
+using Vssl.UnoUINugetInAppBuildIssue.ViewModelInterfaces;
 
 /// <summary>
 /// The main view model

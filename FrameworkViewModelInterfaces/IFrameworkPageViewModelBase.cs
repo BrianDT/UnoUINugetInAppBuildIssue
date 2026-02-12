@@ -1,5 +1,5 @@
 // <copyright file="IFrameworkPageViewModelBase.cs" company="Visual Software Systems Ltd.">Copyright (c) 2016 All rights reserved</copyright>
-namespace FrameworkViewModelInterfaces;
+namespace Vssl.Samples.FrameworkInterfaces;
 
 using System.ComponentModel;
 

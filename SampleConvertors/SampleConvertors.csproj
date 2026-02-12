@@ -6,13 +6,13 @@
     <OutputType>Library</OutputType>
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
-    <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-      <AssemblyName>Vssl.Framework.SampleLibary</AssemblyName>
-      <RootNamespace>Vssl.VisualFramework.SampleLibary</RootNamespace>
+      <ImplicitUsings>disable</ImplicitUsings>
+      <Nullable>enable</Nullable>
+      <AssemblyName>Vssl.Framework.SampleConverters</AssemblyName>
+      <RootNamespace>Vssl.VisualFramework.SampleConverters</RootNamespace>
 
       <IsPackable>true</IsPackable>
-      <PackageId>VSSL.Framework.SampleLibary</PackageId>
+      <PackageId>VSSL.Framework.SampleConverters</PackageId>
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <PackageReadmeFile>README.md</PackageReadmeFile>
       <Authors>BDT</Authors>
@@ -20,7 +20,7 @@
       <Product>VSSL Cross platform Framework</Product>
       <Description>Visual Framework</Description>
       <!--<Version>9.64.1</Version>-->
-      <Version>10.65.2</Version>
+      <Version>10.65.1</Version>
       <Copyright>Visual Software Systems Ltd 2012 - 2026.</Copyright>
       <PackageReadmeFile>README.md</PackageReadmeFile>
       <CodeAnalysisRuleSet>..\Vssl.ruleset</CodeAnalysisRuleSet>
@@ -54,22 +54,16 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="VSSL.Framework.SampleConverters" />
-    <PackageReference Include="Vssl.Framework.SampleFrameworkInterfaces" />
-  </ItemGroup>
-
+    
     <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup>
-        <Drive Include="$(MSBuildProjectFullPath)" />
+        <Drive Include="$(MSBuildProjectFullPath)"/>
     </ItemGroup>
 
     <Target Condition="'$(Configuration)' == 'Release'" Name="CopyPackage" AfterTargets="Pack">
         <Exec Command="%(Drive.RootDir)Nuget\nuget push bin\$(Configuration)\$(PackageId).$(PackageVersion).nupkg -Source VSSL.local" />
     </Target>
-
 </Project>

@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Nuget Library/">
-    <Project Path="FrameworkViewModelInterfaces/FrameworkViewModelInterfaces.csproj" Id="2ffdcc83-8436-4d89-bc58-bfdf79f4881e" />
+    <Project Path="FrameworkViewModelInterfaces/SampleFrameworkInterfaces.csproj" Id="2ffdcc83-8436-4d89-bc58-bfdf79f4881e" />
+    <Project Path="SampleConvertors/SampleConvertors.csproj" Id="faa5215b-f644-47b9-8ddb-8bd039022556" />
     <Project Path="SampleLibrary/SampleLibrary.csproj" Id="596f8325-01dc-496c-b7eb-965def50bf69" />
   </Folder>
   <Folder Name="/Solution Items/">
@@ -11,9 +12,15 @@
     <File Path="global.json" />
     <File Path="ReadMe.md" />
   </Folder>
+  <Folder Name="/Utilities/">
+    <Project Path="MSExtFacade/MSExtFacade.csproj" />
+  </Folder>
   <Folder Name="/ViewModels/">
     <Project Path="ViewModelInterfaces/ViewModelInterfaces.csproj" Id="aa836cda-3f0f-46c5-a0ea-65ae5f7b7ce4" />
     <Project Path="ViewModels/ViewModels.csproj" Id="db5e65ad-7fbc-4391-9888-d170f6ce4459" />
+  </Folder>
+  <Folder Name="/Views/">
+    <Project Path="TopLevelControls/TopLevelControls.csproj" />
   </Folder>
   <Project Path="UnoUINugetInAppBuildIssue/UnoUINugetInAppBuildIssue.csproj">
     <Deploy />

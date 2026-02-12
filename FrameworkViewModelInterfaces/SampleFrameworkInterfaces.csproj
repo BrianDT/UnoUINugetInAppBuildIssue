@@ -1,19 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+      <!--<TargetFramework>net9.0</TargetFramework>-->
+      <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
       <CodeAnalysisRuleSet>..\Vssl.ruleset</CodeAnalysisRuleSet>
       <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <AssemblyName>Vssl.Framework.SampleFrameworkInterfaces</AssemblyName>
+      <RootNamespace>Vssl.Samples.FrameworkInterfaces</RootNamespace>
 
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-      <PackageId>Vssl.Framework.ViewModelInterfacesSample</PackageId>
+      <PackageId>Vssl.Framework.SampleFrameworkInterfaces</PackageId>
       <Authors>BDT</Authors>
       <Company>Visual Software Systems Ltd.</Company>
       <Product>Visual Framework</Product>
       <Description>Cross Platform Visual Framework</Description>
-      <Version>10.0.1</Version>
+      <!--<Version>9.0.1</Version>-->
+      <Version>10.0.2</Version>
       <Copyright>Visual Software Systems Ltd. Copyright (c) 2013 - 2026 All rights reserved</Copyright>
       <PackageReadmeFile>readme.md</PackageReadmeFile>
 

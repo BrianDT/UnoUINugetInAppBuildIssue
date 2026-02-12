@@ -8,6 +8,8 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using Uno.Resizetizer;
 using Uno.UI;
+using Vssl.UnoUINugetInAppBuildIssue.Initialisation;
+using Vssl.UnoUINugetInAppBuildIssue.TopLevelControls;
 
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.
@@ -40,6 +42,7 @@ public partial class App : Application
 #if DEBUG
         this.MainWindow.UseStudio();
 #endif
+        var bootstrapper = new Bootstrapper();
 
         // Do not repeat app initialization when the Window already has content,
         // just ensure that the window is active
@@ -56,6 +59,8 @@ public partial class App : Application
 
         if (rootFrame.Content == null)
         {
+            bootstrapper.Startup();
+
             // When the navigation stack isn't restored navigate to the first page,
             // configuring the new page by passing required information as a navigation
             // parameter
